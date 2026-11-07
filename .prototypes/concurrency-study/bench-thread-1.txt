@@ -1,0 +1,7 @@
+mode=专用标准库线程
+result=ok
+copy_verify_ms=272
+progress_attempted=128
+progress_received=128
+progress_dropped=0
+max_heartbeat_ms=45

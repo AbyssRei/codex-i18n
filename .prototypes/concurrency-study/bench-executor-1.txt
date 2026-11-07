@@ -1,0 +1,7 @@
+mode=GPUI 后台执行器
+result=ok
+copy_verify_ms=271
+progress_attempted=128
+progress_received=128
+progress_dropped=0
+max_heartbeat_ms=40

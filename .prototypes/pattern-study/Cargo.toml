@@ -1,0 +1,12 @@
+[package]
+name = "codex-i18n-pattern-study"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fancy-regex = "0.20"
+regex = "1"
+serde_json = "1"
+
+[profile.release]
+strip = true

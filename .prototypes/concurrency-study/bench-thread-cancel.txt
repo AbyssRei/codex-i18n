@@ -1,0 +1,3 @@
+mode=专用标准库线程
+result=error
+error=已取消

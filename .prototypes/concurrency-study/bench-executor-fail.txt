@@ -1,0 +1,3 @@
+mode=GPUI 后台执行器
+result=error
+error=注入的测试错误

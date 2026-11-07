@@ -1,0 +1,3 @@
+mode=GPUI 后台执行器
+result=error
+error=已取消
