@@ -1,0 +1,35 @@
+name: Windows CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Update Rust stable
+        run: rustup update stable
+      - name: Select Rust stable
+        run: rustup default stable
+      - name: Install Rust components
+        run: rustup component add rustfmt clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Lint
+        run: cargo clippy --locked --all-targets -- -D warnings
+      - name: Test
+        run: cargo test --locked
+      - name: Build portable executable
+        run: cargo build --release --locked
+      - uses: actions/upload-artifact@v7
+        with:
+          name: codex-i18n-windows-x64
+          path: target/release/codex-i18n.exe
+          if-no-files-found: error
